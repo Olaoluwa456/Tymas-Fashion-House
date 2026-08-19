@@ -1,0 +1,722 @@
+/* =========================================
+   TYMAS FASHION HOUSE
+   SERVICES PAGE CSS
+   ========================================= */
+
+/* ---------- RESET ---------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #ffffff;
+    color: #222222;
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* =========================================
+   HEADER / NAVIGATION
+   ========================================= */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    background: #111111;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.12);
+}
+
+.navbar {
+    width: 90%;
+    max-width: 1250px;
+    min-height: 80px;
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo img {
+    width: 58px;
+    height: 58px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #d4af37;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    list-style: none;
+}
+
+.nav-menu a {
+    position: relative;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+    color: #d4af37;
+}
+
+.nav-menu a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -7px;
+
+    width: 0;
+    height: 2px;
+
+    background: #d4af37;
+    transition: width 0.3s ease;
+}
+
+.nav-menu a:hover::after,
+.nav-menu a.active::after {
+    width: 100%;
+}
+
+
+/* ---------- HAMBURGER ---------- */
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 29px;
+    height: 3px;
+    background: #ffffff;
+    border-radius: 10px;
+}
+
+
+/* =========================================
+   SERVICES HERO
+   ========================================= */
+
+.services-hero {
+    min-height: 65vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            rgba(0, 0, 0, 0.68),
+            rgba(0, 0, 0, 0.68)
+        ),
+        url("https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1800&q=85")
+        center / cover no-repeat;
+}
+
+.services-hero .hero-content {
+    width: 90%;
+    max-width: 850px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.services-hero .subtitle {
+    color: #d4af37;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    margin-bottom: 12px;
+}
+
+.services-hero h1 {
+    font-size: clamp(42px, 7vw, 75px);
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.services-hero .hero-content > p:last-child {
+    max-width: 700px;
+    margin: auto;
+
+    color: #eeeeee;
+    font-size: 16px;
+    font-weight: 300;
+}
+
+
+/* =========================================
+   SERVICES INTRO
+   ========================================= */
+
+.services-intro {
+    width: 90%;
+    max-width: 800px;
+
+    margin: auto;
+    padding: 100px 0 55px;
+
+    text-align: center;
+}
+
+.services-intro .subtitle {
+    color: #d4af37;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+}
+
+.services-intro h2 {
+    color: #111111;
+    font-size: clamp(32px, 5vw, 50px);
+    line-height: 1.2;
+    margin-bottom: 18px;
+}
+
+.services-intro > p:last-child {
+    color: #666666;
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+
+/* =========================================
+   SERVICES GRID
+   ========================================= */
+
+.services-grid {
+    width: 88%;
+    max-width: 1200px;
+
+    margin: 0 auto;
+    padding: 20px 0 100px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+.service-card {
+    position: relative;
+
+    padding: 35px 30px 32px;
+    min-height: 330px;
+
+    background: #ffffff;
+    border: 1px solid #e7e7e7;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 4px;
+
+    background: #d4af37;
+
+    transform: scaleX(0);
+    transform-origin: left;
+
+    transition: transform 0.35s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    border-color: #d4af37;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.09);
+}
+
+.service-card:hover::before {
+    transform: scaleX(1);
+}
+
+.service-number {
+    display: block;
+
+    color: #d4af37;
+    font-size: 14px;
+    font-weight: 700;
+
+    letter-spacing: 1px;
+    margin-bottom: 18px;
+}
+
+.service-icon {
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 20px;
+
+    color: #d4af37;
+    background: #111111;
+
+    font-size: 24px;
+
+    transition: 0.3s ease;
+}
+
+.service-card:hover .service-icon {
+    background: #d4af37;
+    color: #111111;
+}
+
+.service-card h3 {
+    color: #111111;
+    font-size: 21px;
+    margin-bottom: 12px;
+}
+
+.service-card p {
+    color: #666666;
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 22px;
+}
+
+.service-card a {
+    display: inline-block;
+
+    color: #111111;
+    font-size: 13px;
+    font-weight: 600;
+
+    padding-bottom: 5px;
+    border-bottom: 2px solid #d4af37;
+
+    transition: 0.3s ease;
+}
+
+.service-card a:hover {
+    color: #d4af37;
+}
+
+
+/* =========================================
+   PROCESS SECTION
+   ========================================= */
+
+.process {
+    background: #f7f7f7;
+    padding: 100px 8%;
+}
+
+.process-heading {
+    max-width: 760px;
+    margin: auto;
+
+    text-align: center;
+}
+
+.process-heading .subtitle {
+    color: #d4af37;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+}
+
+.process-heading h2 {
+    color: #111111;
+    font-size: clamp(32px, 5vw, 48px);
+    margin-bottom: 15px;
+}
+
+.process-heading > p:last-child {
+    color: #666666;
+    font-size: 15px;
+}
+
+
+/* ---------- Process Grid ---------- */
+
+.process-grid {
+    max-width: 1100px;
+    margin: 60px auto 0;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.process-step {
+    position: relative;
+
+    padding: 32px 24px;
+
+    background: #ffffff;
+    border: 1px solid #e5e5e5;
+
+    text-align: center;
+
+    transition: 0.3s ease;
+}
+
+.process-step:hover {
+    transform: translateY(-7px);
+    border-color: #d4af37;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.07);
+}
+
+.process-step > span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 55px;
+    height: 55px;
+
+    margin: 0 auto 18px;
+
+    background: #111111;
+    color: #d4af37;
+
+    border-radius: 50%;
+
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.process-step h3 {
+    color: #111111;
+    font-size: 19px;
+    margin-bottom: 12px;
+}
+
+.process-step p {
+    color: #666666;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   CTA SECTION
+   ========================================= */
+
+.services-cta {
+    padding: 110px 8%;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            rgba(17, 17, 17, 0.94),
+            rgba(17, 17, 17, 0.94)
+        ),
+        url("https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=1800&q=85")
+        center / cover no-repeat;
+}
+
+.services-cta > div {
+    max-width: 800px;
+    margin: auto;
+}
+
+.services-cta .subtitle {
+    color: #d4af37;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 12px;
+}
+
+.services-cta h2 {
+    color: #ffffff;
+    font-size: clamp(32px, 5vw, 52px);
+    line-height: 1.2;
+    margin-bottom: 18px;
+}
+
+.services-cta p:not(.subtitle) {
+    color: #cccccc;
+    font-size: 15px;
+    line-height: 1.8;
+    margin-bottom: 32px;
+}
+
+.services-cta a {
+    display: inline-block;
+
+    padding: 14px 32px;
+
+    background: #d4af37;
+    color: #111111;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    border: 1px solid #d4af37;
+
+    transition: 0.3s ease;
+}
+
+.services-cta a:hover {
+    background: transparent;
+    color: #d4af37;
+}
+
+
+/* =========================================
+   FOOTER
+   ========================================= */
+
+footer {
+    background: #111111;
+    color: #ffffff;
+}
+
+.footer-content {
+    width: 90%;
+    max-width: 1200px;
+
+    margin: auto;
+    padding: 70px 0 50px;
+
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 55px;
+}
+
+.footer-brand h3 {
+    color: #d4af37;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.footer-brand p {
+    color: #aaaaaa;
+    font-size: 14px;
+}
+
+.footer-links,
+.footer-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-links h4,
+.footer-contact h4 {
+    color: #ffffff;
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+
+.footer-links a {
+    color: #aaaaaa;
+    font-size: 14px;
+    transition: 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #d4af37;
+}
+
+.footer-contact p {
+    color: #aaaaaa;
+    font-size: 14px;
+}
+
+.footer-bottom {
+    padding: 20px;
+
+    text-align: center;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-bottom p {
+    color: #888888;
+    font-size: 13px;
+}
+
+
+/* =========================================
+   RESPONSIVE - TABLET
+   ========================================= */
+
+@media (max-width: 1050px) {
+
+    .nav-menu {
+        gap: 15px;
+    }
+
+    .nav-menu a {
+        font-size: 13px;
+    }
+
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* =========================================
+   RESPONSIVE - MOBILE
+   ========================================= */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        min-height: 72px;
+        width: 92%;
+    }
+
+    .logo img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-menu {
+        position: absolute;
+
+        top: 72px;
+        left: -100%;
+
+        width: 100%;
+
+        padding: 25px 0;
+
+        background: #111111;
+
+        flex-direction: column;
+        gap: 20px;
+
+        transition: left 0.4s ease;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .services-hero {
+        min-height: 65vh;
+    }
+
+    .services-hero h1 {
+        font-size: 45px;
+    }
+
+    .services-intro {
+        padding-top: 75px;
+    }
+
+    .services-grid {
+        width: 90%;
+        grid-template-columns: 1fr;
+        padding-bottom: 75px;
+    }
+
+    .service-card {
+        min-height: auto;
+    }
+
+    .process {
+        padding: 75px 6%;
+    }
+
+    .process-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .services-cta {
+        padding: 80px 7%;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        padding: 60px 0 40px;
+    }
+}
+
+
+/* =========================================
+   RESPONSIVE - SMALL PHONES
+   ========================================= */
+
+@media (max-width: 480px) {
+
+    .services-hero h1 {
+        font-size: 36px;
+    }
+
+    .services-hero .hero-content > p:last-child {
+        font-size: 14px;
+    }
+
+    .services-intro h2 {
+        font-size: 32px;
+    }
+
+    .service-card {
+        padding: 30px 24px;
+    }
+
+    .process-heading h2 {
+        font-size: 32px;
+    }
+
+    .services-cta h2 {
+        font-size: 32px;
+    }
+
+    .services-cta a {
+        width: 100%;
+        max-width: 250px;
+    }
+}
